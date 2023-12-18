@@ -1,0 +1,119 @@
+.portadaInicio{
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+
+}
+
+.leftPortada{
+    width: 50%;
+    background-color: #095169;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.leftPortada h1{
+    max-width: 400px;
+    font-size: 50px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    color: #f3f3f3;
+}
+
+.buscador{
+    margin-left: 30px;
+    height: 40px;
+    width: 400px;
+}
+
+.buscador input{
+    width: 300px;
+    height: 40px;
+    padding-left: 20px;
+    border-style: none;
+    border-top-left-radius: 16px;
+    font-size: 18px;
+}
+
+.buscador input:focus{
+    outline: none;
+}
+
+.buscador button{
+    height: 40px;
+    width: 100px;
+    border-style: none;
+    font-size: 18px;
+    border-top-right-radius: 16px;
+    letter-spacing: 1.5px;
+    background-color: #53ba83;
+    color: #f3f3f3;
+    font-weight: 600;
+}
+
+.buscador button:hover{
+    background-color: #449469;
+    scale: 1.1;
+    transition:0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.list-busqueda{
+    height: 150px;
+    width: 400px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.list-busqueda li{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: #f3f3f3;
+    
+}
+
+.rightPortada{
+    width: 50%;
+    background-image: url("../../img/portada-b.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 888px){
+    .buscador{
+        width: 300px;
+    }
+    .buscador input{
+        width: 200px;
+    }
+    .list-busqueda{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    .rightPortada{
+        display: none;
+    }
+
+    .leftPortada{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buscador{
+        margin-left: 0px;
+    }
+}

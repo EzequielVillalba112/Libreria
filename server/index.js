@@ -9,7 +9,7 @@ app.use(json());
 app.use(corsMiddleware());
 app.disable("x-powered-by");
 
-app.use("/bd", bookRoutes);
+app.use("/db", bookRoutes);
 
 app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`);

@@ -1,0 +1,45 @@
+.listCards{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.card{
+    margin-top: 20px;
+    width: 200px;
+    height: 370px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #53ba83;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card img{
+    border-bottom-right-radius: 20px;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3{
+    width: 150px;
+    color: #f4f4f4;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btnDetalles{
+    width: 200px;
+    margin: auto;
+    height: 30px;
+    border-style: none;
+    background-color: #53ba83;
+    color: #f4f4f4;
+    font-size: 17px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}

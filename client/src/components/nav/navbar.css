@@ -7,6 +7,7 @@
     justify-content: space-between;
 }
 
+
 .logo{
     width: 120px;
     height: 100px;
@@ -37,4 +38,58 @@
 .menu li:hover{
     scale: 1.1;
     transition:0.8s ease-in-out;
+}
+
+.btnMenu{
+    display: none;
+    cursor: pointer;
+}
+
+.menuAct{
+    position: absolute;
+    z-index: 9;
+    width: 80%;
+    background-color: #f6f8f8;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuAct ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.menuAct ul li{
+    font-size: 30px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.menuAct li:hover{
+    cursor: pointer;
+    background-color: #dfdfdf;
+}
+
+@media only screen and (min-width: 680px){
+    .menuAct{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    .menu{
+        display: none;
+    }
+    .btnMenu{
+        display: flex;
+    }
 }

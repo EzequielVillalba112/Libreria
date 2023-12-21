@@ -1,14 +1,23 @@
 .popularBooks{
     width: 100%;
-    height: 55vh;
-    background-color: #285470;
+    height: 100%;
+    background-color: #f6f8f8;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .popularBooks>h2{
-    color: #f4f4f4;
+    text-align: center;
+    width: 100%;
+    color: #325973;
     font-size: 40px;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 680px){
+    .popularBooks>h2{
+        text-align: center;
+    }
+    
 }

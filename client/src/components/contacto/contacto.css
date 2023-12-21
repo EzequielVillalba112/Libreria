@@ -1,0 +1,117 @@
+.contact{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftSection{
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 90px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.leftSection h2{
+    color: #325973;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.leftSection>h2::after{
+    content: "";
+    display: flex;
+    width: 300px;
+    background-color: #325973;
+    height: 7px;
+    border-radius: 16px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #325973;
+    font-size: 18px;
+}
+
+.rightSection{
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.containerInput{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f8f8;
+    padding: 20px;
+    margin-right: 100px;
+}
+
+.containerInput input, textarea{
+    width: 100%;
+    height: 30px;
+    border-style: none;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.containerInput textarea{
+    height: 100px !important;
+    resize: none;
+}
+
+.btnSendMens{
+    border-style: none;
+    height: 40px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    width: 50%;
+    margin: auto;
+    background-color: #325973;
+    color: #f6f8f8;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 780px){
+    .contact{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+    .leftSection{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    .rightSection{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerInput{
+        margin-right: 0px;
+    }
+}

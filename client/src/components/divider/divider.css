@@ -1,0 +1,34 @@
+.divider{
+    background-color: #325973;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider>h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.CatalogueBook{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.CatalogueBook:hover{
+    transition: 1s ease-in-out;
+    scale: 1.2;
+}

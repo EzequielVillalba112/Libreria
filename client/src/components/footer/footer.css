@@ -1,0 +1,31 @@
+footer{
+    background-color: #325973;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul{
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+footer ul li:hover{
+    cursor: pointer;
+    transition:1s ease-in-out;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright{
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #267a96;
+}

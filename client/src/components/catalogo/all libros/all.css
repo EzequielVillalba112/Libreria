@@ -1,0 +1,65 @@
+.listAllBooks ul{
+    list-style: none;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(200px, max-content) repeat(auto-fill, 200px);
+    grid-gap: 24px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 15px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.searchBook{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 40px;
+}
+
+.searchIcon{
+    width: 30px;
+    height: 35px;
+    margin-top: 10px;
+    background-color: #cccccc;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.searchBook input{
+    margin-top: 10px;
+    height: 35px;
+    width: 300px;
+    border-style: none;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    padding-left: 10px;
+    font-size: 16px;
+}    
+
+
+.searchBook input:focus{
+    outline: none;
+}
+
+.btnBuscarBook{
+    width: 100px;
+    margin-right: 10px;
+    height: 35px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #095169;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: #f4f4f4;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}

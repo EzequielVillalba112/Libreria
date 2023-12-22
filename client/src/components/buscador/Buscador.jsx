@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Buscador() {
   const [listBooks, setListBooks] = useState([]);
+  const [search, setSearch]= useState();
 
   const searchBooks = (name = "") => {
     if (name != "") {
@@ -22,15 +23,20 @@ export default function Buscador() {
         placeholder="Buscar un libro"
         onChange={(e) => {
           searchBooks(e.target.value);
+          setSearch(e.target.value);
         }}
       />
       <button className="btnBuscar">Buscar</button>
 
-      <ul className="list-busqueda">
+     {
+      search != "" && (
+        <ul className="list-busqueda">
         {listBooks.map((book, i) => (
           <li key={i}>{book.titulo}</li>
         ))}
       </ul>
+      )
+     }
     </div>
   );
 }

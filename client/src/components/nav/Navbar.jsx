@@ -11,7 +11,6 @@ export default function Navbar() {
     setMenu(!menu);
   };
 
-  console.log(menu);
   return (
     <>
       <nav className="navBar">
@@ -31,11 +30,7 @@ export default function Navbar() {
                 Catalogo
               </Link>
             </li>
-            <li className="itemMenu">
-              <Link to="/about" className="linkMenu">
-                Sobre Nosotros
-              </Link>
-            </li>
+            
           </ul>
         </div>
 
@@ -53,14 +48,10 @@ export default function Navbar() {
             </li>
             <li className="itemMenu">
               <Link to="/catalogo" className="linkMenu">
-                Catalogo
+              Catálogo
               </Link>
             </li>
-            <li className="itemMenu">
-              <Link to="/about" className="linkMenu">
-                Sobre Nosotros
-              </Link>
-            </li>
+          
           </ul>
         </div>
       )}

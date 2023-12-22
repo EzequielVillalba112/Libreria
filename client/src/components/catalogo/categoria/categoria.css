@@ -1,0 +1,51 @@
+.categoryAll{
+    width: 100%;
+    color: #325973;
+}
+
+.categoryAll h2{
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.categoryAll h2::after{
+    content: "";
+    display: flex;
+    width: 300px;
+    background-color: #325973;
+    height: 7px;
+    border-radius: 16px;
+}
+
+.listCategory{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.listCategory ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.listCategory ul li{
+    width: 100%;
+    padding: 10px;
+    font-size: 19px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.listCategory ul li:hover{
+    cursor: pointer;
+    background: #d8d8d8;
+}

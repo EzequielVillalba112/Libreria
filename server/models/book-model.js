@@ -44,4 +44,16 @@ export class BookModel {
       }
     });
   }
+
+  static getAllGenres(res) {
+    const query = `SELECT * FROM genero`;
+
+    db.query(query, (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+  }
 }

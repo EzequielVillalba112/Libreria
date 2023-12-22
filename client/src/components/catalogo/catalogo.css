@@ -1,0 +1,19 @@
+.catalogue{
+    width: 100%;
+    display: flex;
+}
+
+.category{
+    margin: 10px 10px;
+    min-width: 350px;
+    background: #f0f1f1;
+    border-radius: 6px;
+    min-height: calc(100vh - 150px);
+}
+
+.allBook{
+    width: calc(100vw - 400px);
+    background: #f0f1f1;
+    border-radius: 6px;
+    margin: 10px 10px;
+}

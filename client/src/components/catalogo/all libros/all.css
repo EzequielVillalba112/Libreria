@@ -1,15 +1,77 @@
 .listAllBooks ul{
+    width: 100%;
     list-style: none;
     display: grid;
     align-items: center;
-    grid-template-columns: minmax(200px, max-content) repeat(auto-fill, 200px);
-    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 15px;
     margin: 0 auto;
     margin-bottom: 90px;
+}
+
+.listAllBooks ul li{
+    display: flex;
+    background-color: #e4e4e4;
+    color: #325973;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(143, 143, 143, 0.2);
+}
+
+.cardAllBook{
+    width: 400px;
+    display: flex;
+}
+
+.cardAllBook img{
+    width: 120px;
+    height: 200px;
+}
+
+.dataBook{
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+}
+
+.dataBook h3{
+    margin-top: 10px;
+    height: 20px;
+}
+
+.dataBook p{
+    margin-top: 30px;
+}
+
+.dataBook img{
+    width: 100px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.btnDetail{
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #095169;
+    border-radius: 5px;
+    color: #f4f4f4;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+   margin-top: 30px;
 }
 
 .searchBook{
@@ -62,4 +124,8 @@
     font-weight: 500;
     letter-spacing: 1.5px;
     cursor: pointer;
+}
+
+.btn:hover{
+   opacity: 0.8;
 }

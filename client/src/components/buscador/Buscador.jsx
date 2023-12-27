@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Buscador() {
   const [listBooks, setListBooks] = useState([]);
-  const [search, setSearch]= useState();
+  const [search, setSearch] = useState();
 
   const searchBooks = (name = "") => {
     if (name != "") {
@@ -28,15 +29,15 @@ export default function Buscador() {
       />
       <button className="btnBuscar">Buscar</button>
 
-     {
-      search != "" && (
+      {search != "" && (
         <ul className="list-busqueda">
-        {listBooks.map((book, i) => (
-          <li key={i}>{book.titulo}</li>
-        ))}
-      </ul>
-      )
-     }
+          {listBooks.map((book, i) => (
+            <li key={i}>
+              <Link to={`/detail/${book.id_libro}`} className="linkBook">{book.titulo}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

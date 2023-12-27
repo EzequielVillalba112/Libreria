@@ -1,22 +1,23 @@
 .listCards{
-    width: 80%;
+    width: 90%;
     list-style: none;
     display: grid;
     align-items: center;
-    grid-template-columns: minmax(200px, max-content) repeat(auto-fill, 200px);
-    grid-gap: 24px;
+    grid-template-columns: minmax(250px, max-content) repeat(auto-fill, 250px);
     justify-content: center;
-    align-items: center;
+    gap: 20px;
     position: relative;
     top: 15px;
+    left: 20px;
+    right: 20px;
     margin: 0 auto;
     margin-bottom: 90px;
 }
 
 .card{
     margin-top: 20px;
-    width: 200px;
-    height: 370px;
+    width: 250px;
+    height: 480px;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -27,6 +28,17 @@
     border-bottom-right-radius: 10px;
 }
 
+.linkPopular{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
+
 .card:hover{
     cursor: pointer;
     opacity: 0.9;
@@ -34,15 +46,17 @@
 
 .card img{
     border-bottom-right-radius: 20px;
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
+    width: 250px;
+    height: 400px;
+
 }
 
 .card h3{
     width: 150px;
     color: #f4f4f4;
     text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
@@ -58,8 +72,11 @@
     border-radius: 5px;
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 676px){
     .listCards{
-      grid-template-columns:minmax(200px, max-content);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -21,7 +21,19 @@ export class BookModel {
   }
 
   static searchBook(name, res) {
-    const query = `SELECT * FROM libros WHERE titulo LIKE '%${name}%' LIMIT 10`;
+    const query = `SELECT id_libro,titulo,portada,rate FROM libros WHERE titulo LIKE '%${name}%' LIMIT 10`;
+
+    db.query(query, (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+  }
+
+  static searchBookById(id, res) {
+    const query = `SELECT * FROM libros WHERE id_libro=${id}`;
 
     db.query(query, (err, result) => {
       if (err) {
@@ -34,7 +46,7 @@ export class BookModel {
 
   static popularBook(res) {
     const rate = [5, 4];
-    const query = `SELECT * FROM libros WHERE rate = ${rate[0]} OR rate = ${rate[1]}`;
+    const query = `SELECT * FROM libros WHERE rate = ${rate[0]} OR rate = ${rate[1]} LIMIT 9`;
 
     db.query(query, (err, result) => {
       if (err) {

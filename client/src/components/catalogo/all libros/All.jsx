@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./all.css";
 import { IoSearch } from "react-icons/io5";
+import { StarRatio } from "../../funciones/starRation";
+import { Link } from "react-router-dom";
 
 export default function All() {
   const [listAllBooks, setListAllBooks] = useState([]);
   const [search, setSearch] = useState();
-  const [listSearch, setListSearch] = useState([1]);
+  const [listSearch, setListSearch] = useState([]);
 
   const allBooks = async () => {
     const url = `http://localhost:3000/db/all`;
@@ -51,11 +53,12 @@ export default function All() {
 
   useEffect(() => {
     allBooks();
-    setListSearch([1])
+    setListSearch([1]);
   }, [search == ""]);
 
+  console.log(listAllBooks);
   return (
-    <div className="allBooks">
+    <>
       <div className="searchBook">
         <IoSearch color="#f4f4f4" className="searchIcon" />
         <input
@@ -65,15 +68,27 @@ export default function All() {
             setSearch(e.target.value);
           }}
         />
-        <button onClick={searchBooks} className="btnBuscarBook">Buscar</button>
+        <button onClick={searchBooks} className="btn btnBuscarBook">
+          Buscar
+        </button>
       </div>
       <div className="listAllBooks">
         <ul>
           {listAllBooks.map((book, i) => (
             <li key={i}>
-              <div className="card">
+              <div className="cardAllBook">
                 <img src={book.portada} alt={book.titulo} />
-                <h3>{book.titulo}</h3>
+                <div className="dataBook">
+                  <h3>{book.titulo}</h3>
+                  <p>{book.author}</p>
+                  {<img src={StarRatio(book.rate)} alt="" />}
+                  <Link
+                    to={`/detail/${book.id_libro}`}
+                    className="btn btnDetail"
+                  >
+                    Detalles
+                  </Link>
+                </div>
               </div>
             </li>
           ))}
@@ -85,6 +100,6 @@ export default function All() {
           </h2>
         )}
       </div>
-    </div>
+    </>
   );
 }

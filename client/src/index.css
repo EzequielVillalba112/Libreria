@@ -4,3 +4,8 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.linkBook{
+    text-decoration: none;
+    color: #325973;
+}

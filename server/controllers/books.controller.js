@@ -16,3 +16,8 @@ export const popularBooks = async (req, res) => {
 export const allGenres = async (req, res) => {
   return BookModel.getAllGenres(res);
 };
+
+export const searchBooksId = async (req, res) => {
+  const id = req.params.id;
+  return BookModel.searchBookById(id, res);
+}

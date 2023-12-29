@@ -12,9 +12,20 @@
 }
 
 .allBook{
-    width: calc(100vw - 400px);
+    min-width: calc(100vw - 400px);
     height: auto;
     background: #f0f1f1;
     border-radius: 6px;
     margin: 10px 10px;
+}
+
+@media only screen and (max-width: 706px){
+    .catalogue{
+        display: flex;
+        flex-direction: column;
+    }
+    .allBook{
+        width: 100%;
+    }
+   
 }

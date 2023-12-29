@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { StarRatio } from "../funciones/starRation";
-
+import "./detailbook.css";
+import Comments from "./comentario/Comments";
 
 export default function DetailBook() {
   const [dataBook, setDataBook] = useState([]);
@@ -30,19 +31,35 @@ export default function DetailBook() {
   }, []);
 
   return (
-    <div className="detailBook">
+    <>
       <div className="containerDataBook">
         {dataBook.map((data, i) => (
           <div className="datasBook" key={i}>
-            <img src={data.portada} alt={data.titulo} />
-            <h3>{data.titulo}</h3>
-            <img src={StarRatio(data.rate)} alt={data.titulo} />
-            <p>{data.anio}</p>
-            <p>{data.author}</p>
-            <p>{data.synopsis}</p>
+            <img className="frontPage" src={data.portada} alt={data.titulo} />
+            <div className="dataBookDetail">
+              <h1>{data.titulo}</h1>
+              <img src={StarRatio(data.rate)} alt={data.titulo} />
+              <p>{data.synopsis}</p>
+              <div className="descriptioBook">
+                <div className="itemDes">
+                  <h3>Author: </h3>
+                  <p>{data.author}</p>
+                </div>
+                <div className="itemDes">
+                  <h3>Año de publicacion: </h3>
+                  <p>{data.anio}</p>
+                </div>
+                <div className="itemDes">
+                  <h3>Paginas: </h3>
+                  <p>{data.paginas}</p>
+                </div>
+              </div>
+              <button className="btnFavorite">Agregar a favoritos</button>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+     <Comments/>
+    </>
   );
 }

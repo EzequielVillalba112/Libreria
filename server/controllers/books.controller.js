@@ -21,3 +21,9 @@ export const searchBooksId = async (req, res) => {
   const id = req.params.id;
   return BookModel.searchBookById(id, res);
 }
+
+export const searchBooksCategori = async (req, res) => {
+  const idCategori = req.params.categori;
+
+  return BookModel.bookCategory(idCategori, res);
+}

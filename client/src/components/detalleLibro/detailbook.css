@@ -1,0 +1,60 @@
+.containerDataBook{
+    width: 100%;
+}
+
+.datasBook{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.frontPage{
+    width: 300px;
+    height: 500px;
+    box-shadow: 3px 0px 5px 1px rgb(54, 54, 54);
+}
+
+.dataBookDetail{
+    width: 500px;
+    height: 500px;
+    height: 100%;
+}
+
+.dataBookDetail img{
+    width: 100px;
+    height: 20px;
+}
+
+.descriptioBook{
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDes{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnFavorite{
+    width: 200px;
+    height: 34px;
+    border-radius: 5px;
+    margin: 10px auto;
+    border-style: none;
+    background-color: #e6b87c;
+    color: #ffffff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.comment{
+    width: 900px;
+    margin: 50px auto;
+}

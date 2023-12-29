@@ -68,4 +68,20 @@ export class BookModel {
       }
     });
   }
+
+  static bookCategory(idCategory, res) {
+    const query = `SELECT id_libro,titulo,portada,rate,author 
+                    FROM libros 
+                    WHERE id_libro 
+                    IN (SELECT id_libro FROM genero_libro 
+                      WHERE id_genero = ${idCategory})`;
+
+    db.query(query, (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+  }
 }

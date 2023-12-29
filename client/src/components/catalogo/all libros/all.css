@@ -43,8 +43,9 @@
 }
 
 .dataBook h3{
+    font-size: 15px;
     margin-top: 10px;
-    height: 20px;
+    height: 30px;
 }
 
 .dataBook p{

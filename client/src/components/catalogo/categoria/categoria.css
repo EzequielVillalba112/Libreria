@@ -3,6 +3,22 @@
     color: #325973;
 }
 
+.titleCate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.arrowDownCate{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.arrowDownCate:hover{
+    opacity: 0.8;
+}
+
 .categoryAll h2{
     font-size: 30px;
     margin-left: 10px;
@@ -10,10 +26,10 @@
     margin-top: 10px;
 }
 
-.categoryAll h2::after{
+.categoryAll::after{
     content: "";
     display: flex;
-    width: 300px;
+    width: 100%;
     background-color: #325973;
     height: 7px;
     border-radius: 16px;
@@ -49,3 +65,19 @@
     cursor: pointer;
     background: #d8d8d8;
 }
+
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+
+@media only screen and (max-width: 730px){
+    .arrowDownCate{
+        display: flex;
+    }
+    .category{
+        min-height: auto;
+    }
+}   

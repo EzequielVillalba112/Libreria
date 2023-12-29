@@ -4,10 +4,31 @@ import { IoSearch } from "react-icons/io5";
 import { StarRatio } from "../../funciones/starRation";
 import { Link } from "react-router-dom";
 
-export default function All() {
+export default function All({ idPr = "" }) {
   const [listAllBooks, setListAllBooks] = useState([]);
   const [search, setSearch] = useState();
   const [listSearch, setListSearch] = useState([]);
+
+  const categoriBook = async () => {
+    if (idPr != "" && idPr != "all") {
+      const url = `http://localhost:3000/db/book/categoria/${idPr}`;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error("Nope");
+        }
+        return res.json().then((response) => {
+          setListAllBooks(response);
+          if (response.length == 0) {
+            setListAllBooks("Failed");
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   const allBooks = async () => {
     const url = `http://localhost:3000/db/all`;
@@ -24,6 +45,17 @@ export default function All() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    allBooks();
+  }, [idPr == "all"]);
+
+  useEffect(() => {
+    categoriBook();
+    if(listSearch.length == 0){
+      setListSearch([1])
+    }
+  }, [idPr]);
 
   useEffect(() => {
     allBooks();
@@ -56,7 +88,6 @@ export default function All() {
     setListSearch([1]);
   }, [search == ""]);
 
-  console.log(listAllBooks);
   return (
     <>
       <div className="searchBook">
@@ -74,24 +105,32 @@ export default function All() {
       </div>
       <div className="listAllBooks">
         <ul>
-          {listAllBooks.map((book, i) => (
-            <li key={i}>
-              <div className="cardAllBook">
-                <img src={book.portada} alt={book.titulo} />
-                <div className="dataBook">
-                  <h3>{book.titulo}</h3>
-                  <p>{book.author}</p>
-                  {<img src={StarRatio(book.rate)} alt="" />}
-                  <Link
-                    to={`/detail/${book.id_libro}`}
-                    className="btn btnDetail"
-                  >
-                    Detalles
-                  </Link>
+          {listAllBooks != "Failed" ? (
+            listAllBooks.map((book, i) => (
+              <li key={i}>
+                <div className="cardAllBook">
+                  <img src={book.portada} alt={book.titulo} />
+                  <div className="dataBook">
+                    <h3>{book.titulo}</h3>
+                    <p>{book.author}</p>
+                    {<img src={StarRatio(book.rate)} alt="" />}
+                    <Link
+                      to={`/detail/${book.id_libro}`}
+                      className="btn btnDetail"
+                    >
+                      Detalles
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
+              </li>
+            ))
+          ) : (
+            <h2
+              style={{ width: "100%", textAlign: "center", color: "#325973" }}
+            >
+              No hay resultado
+            </h2>
+          )}
         </ul>
 
         {listSearch.length == 0 && (

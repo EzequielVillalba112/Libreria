@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import './categoria.css'
+import "./categoria.css";
+import { FaArrowDown } from "react-icons/fa";
 
-export default function Categoria() {
+export default function Categoria({idPr}) {
   const [listCategory, setListCategory] = useState([]);
+  const [arrowClick, setArrowClick] = useState(true);
 
   const fetchGenre = async () => {
     const url = `http://localhost:3000/db/allgenre`;
@@ -19,22 +21,40 @@ export default function Categoria() {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchGenre();
-  },[])
+  }, []);
+
+  const prueb = (id) =>{
+    idPr(id);
+  }
 
   return (
     <div className="categoryAll">
+      <div className="titleCate">
         <h2>Categoría</h2>
+        <FaArrowDown
+          size="1.5em"
+          className="arrowDownCate"
+          onClick={() => {
+            setArrowClick(!arrowClick);
+          }}
+        />
+      </div>
+      {arrowClick === true && (
         <div className="listCategory">
-            <ul>
-                {
-                    listCategory.map((category, i)=> (
-                        <li key={i}>{category.genero}</li>
-                    ))
-                }
-            </ul>
+          <ul>
+            <li onClick={()=>{
+                prueb("all")
+              }}>Ver todos</li>
+            {listCategory.map((category, i) => (
+              <li onClick={()=>{
+                prueb(category.id_genero)
+              }} key={i}>{category.genero}</li>
+            ))}
+          </ul>
         </div>
+      )}
     </div>
   );
 }

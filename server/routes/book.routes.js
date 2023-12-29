@@ -4,6 +4,7 @@ import {
   allGenres,
   popularBooks,
   searchBook,
+  searchBooksCategori,
   searchBooksId,
 } from "../controllers/books.controller.js";
 
@@ -14,5 +15,6 @@ router.get("/all", allBooks);
 router.get("/popular", popularBooks);
 router.get("/allgenre", allGenres);
 router.get("/book/:id", searchBooksId);
+router.get("/book/categoria/:categori", searchBooksCategori);
 
 export default router;

@@ -52,6 +52,7 @@
     background-color: #f6f8f8;
     height: calc(100vh - 100px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -79,6 +80,30 @@
     background-color: #dfdfdf;
 }
 
+.navBar .btnUserLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #325973;
+    margin-right: 20px;
+}
+
+.btnUserLogin h2{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.btnUserLoginAct{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    cursor: pointer;
+    color: #325973;
+}
+
 @media only screen and (min-width: 680px){
     .menuAct{
         display: none;
@@ -91,5 +116,8 @@
     }
     .btnMenu{
         display: flex;
+    }
+    .navBar .btnUserLogin{
+        display: none;
     }
 }

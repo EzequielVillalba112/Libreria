@@ -1,10 +1,19 @@
 import mysql from "mysql";
 
 const db = mysql.createConnection({
+  //Local
   host: "localhost",
   user: "root",
   password: "",
   database: "biblioteca",
+  
+ /*Clever cloud
+ host: "b72ansxla5bze8snktvc-mysql.services.clever-cloud.com",
+  user: "ucbrluvagkiy2cvy",
+  password: "",
+  database: "b72ansxla5bze8snktvc",
+ */
+  
 });
 
 export class BookModel {

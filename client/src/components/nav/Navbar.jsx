@@ -3,6 +3,7 @@ import Logo from "../../img/logo-b.png";
 import { Link } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -30,8 +31,12 @@ export default function Navbar() {
                 Catalogo
               </Link>
             </li>
-            
           </ul>
+        </div>
+
+        <div className="btnUserLogin">
+          <h2>Iniciar sesión.</h2>
+          <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
         </div>
 
         <div className="btnMenu">
@@ -48,11 +53,14 @@ export default function Navbar() {
             </li>
             <li className="itemMenu">
               <Link to="/catalogo" className="linkMenu">
-              Catálogo
+                Catálogo
               </Link>
             </li>
-          
           </ul>
+          <div className="btnUserLoginAct">
+            <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
+            <h2>Iniciar sesión.</h2>
+          </div>
         </div>
       )}
     </>

@@ -35,8 +35,10 @@ export default function Navbar() {
         </div>
 
         <div className="btnUserLogin">
-          <h2>Iniciar sesión.</h2>
-          <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
+          <Link to="/login" >
+            <h2>Iniciar sesión.</h2>
+            <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
+          </Link>
         </div>
 
         <div className="btnMenu">

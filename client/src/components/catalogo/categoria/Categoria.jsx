@@ -6,6 +6,7 @@ export default function Categoria({idPr}) {
   const [listCategory, setListCategory] = useState([]);
   const [arrowClick, setArrowClick] = useState(true);
 
+  //Carga todos los generos de la bd
   const fetchGenre = async () => {
     const url = `http://localhost:3000/db/allgenre`;
     try {
@@ -26,6 +27,7 @@ export default function Categoria({idPr}) {
   }, []);
 
   const prueb = (id) =>{
+    //Envia la id del genero elegido al apartado de Catalogo.jsx
     idPr(id);
   }
 
@@ -49,6 +51,7 @@ export default function Categoria({idPr}) {
               }}>Ver todos</li>
             {listCategory.map((category, i) => (
               <li onClick={()=>{
+                //Envia la id del genero al que se hizo click
                 prueb(category.id_genero)
               }} key={i}>{category.genero}</li>
             ))}

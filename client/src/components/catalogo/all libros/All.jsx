@@ -8,7 +8,9 @@ export default function All({ idPr = "" }) {
   const [listAllBooks, setListAllBooks] = useState([]);
   const [search, setSearch] = useState();
   const [listSearch, setListSearch] = useState([]);
-
+  
+  //filtra los libros por la "id" de categoria, que se recibe
+  //por medio de "./categoria/Categoria.jsx"
   const categoriBook = async () => {
     if (idPr != "" && idPr != "all") {
       const url = `http://localhost:3000/db/book/categoria/${idPr}`;
@@ -30,6 +32,7 @@ export default function All({ idPr = "" }) {
     }
   };
 
+  //Lista todos los libros en la bd
   const allBooks = async () => {
     const url = `http://localhost:3000/db/all`;
 
@@ -46,10 +49,12 @@ export default function All({ idPr = "" }) {
     }
   };
 
+  //Cuando el partado de categoria envia a "idPr == all" llama a la funcion de listar todos los libros en la bd
   useEffect(() => {
     allBooks();
   }, [idPr == "all"]);
 
+  //ejecuta la funcion de categoria cada ves que hay un cambio en la "idPr = id" recibida
   useEffect(() => {
     categoriBook();
     if(listSearch.length == 0){
@@ -57,10 +62,12 @@ export default function All({ idPr = "" }) {
     }
   }, [idPr]);
 
+  //Cuando carga la web llama a la funcion de listar todos los libros en la bd
   useEffect(() => {
     allBooks();
   }, []);
 
+  //Busqueda de libros por nombre
   const searchBooks = async () => {
     const url = `http://localhost:3000/db/books/${search}`;
     if (search != "") {
@@ -79,6 +86,7 @@ export default function All({ idPr = "" }) {
     }
   };
 
+  //Si la busqueda devuelve algun libro lo carga a lista de libros
   useEffect(() => {
     setListAllBooks(listSearch);
   }, [listSearch]);

@@ -6,14 +6,13 @@ const db = mysql.createConnection({
   user: "root",
   password: "",
   database: "biblioteca",
-  
- /*Clever cloud
+
+  /*Clever cloud
  host: "b72ansxla5bze8snktvc-mysql.services.clever-cloud.com",
   user: "ucbrluvagkiy2cvy",
   password: "",
   database: "b72ansxla5bze8snktvc",
  */
-  
 });
 
 export class BookModel {
@@ -90,6 +89,22 @@ export class BookModel {
         res.send(err);
       } else {
         res.send(result);
+      }
+    });
+  }
+
+  static login(sentLoginEmail, sentLoginPassword, res) {
+    const values = [sentLoginEmail, sentLoginPassword];
+    const query = `SELECT * FROM user WHERE correo = ? && password = ?`;
+
+    db.query(query, values, (err, result) => {
+      if (err) {
+        res.send({error:err})
+      }
+      if(result.length > 0){
+        res.send(result);
+      }else{
+        res.send({message: "Credencial invalida"})
       }
     });
   }

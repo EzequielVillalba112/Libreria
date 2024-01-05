@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../../context/UserContext";
+import CerrarSecion from "../login/navCerrar/CerrarSecion";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
+  const [signOff, setSingOff] = useState(false);
+
+  const { user } = useAuth();
 
   const menuClick = () => {
     setMenu(!menu);
@@ -35,10 +40,24 @@ export default function Navbar() {
         </div>
 
         <div className="btnUserLogin">
-          <Link to="/login" >
-            <h2>Iniciar sesión.</h2>
-            <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
-          </Link>
+          {user.length > 0 ? (
+            <>
+              <h2
+                onClick={() => {
+                  setSingOff(!signOff);
+                }}
+              >
+                {user[0].nombre}
+              </h2>
+
+              {signOff === true ? <CerrarSecion menu={setSingOff}/> : ""}
+            </>
+          ) : (
+            <Link to="/login">
+              <h2>Iniciar sesión.</h2>
+            </Link>
+          )}
+          <FaUserCircle size="3em" style={{ marginRight: "20px" }} />
         </div>
 
         <div className="btnMenu">

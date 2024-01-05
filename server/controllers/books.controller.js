@@ -27,3 +27,10 @@ export const searchBooksCategori = async (req, res) => {
 
   return BookModel.bookCategory(idCategori, res);
 }
+
+export const login = async (req, res) => {
+  const sentLoginEmail = req.body.LoginUserEmail;
+  const sentLoginPassword = req.body.LoginPassword;
+
+  return BookModel.login(sentLoginEmail, sentLoginPassword, res);
+}

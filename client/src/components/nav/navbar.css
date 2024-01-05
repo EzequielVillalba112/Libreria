@@ -46,7 +46,7 @@
 
 .menuAct{
     position: absolute;
-    z-index: 9;
+    z-index: 90;
     width: 80%;
     background-color: #f6f8f8;
     height: calc(100vh - 100px);
@@ -79,7 +79,7 @@
     background-color: #dfdfdf;
 }
 
-.btnUserLogin a{
+.btnUserLogin {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -87,6 +87,11 @@
     cursor: pointer;
     color: #325973;
     margin-right: 20px;
+}
+
+.btnUserLogin a{
+    text-decoration: none;
+    color: #325973;
 }
 
 .btnUserLogin h2{

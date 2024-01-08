@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 import DetailBook from "./components/detalleLibro/DetailBook";
 import Login from "./components/login/Login";
 import { UserProvider } from "./context/UserContext";
+import Favorites from "./page/favorites/Favorites";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/catalogo" element={<Catalogo />} />
             <Route path="/detail/:idBook" element={<DetailBook />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/favorites" element={<Favorites/>}/>
           </Routes>
           <Footer />
         </BrowserRouter>

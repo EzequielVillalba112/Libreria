@@ -95,17 +95,33 @@ export class BookModel {
 
   static login(sentLoginEmail, sentLoginPassword, res) {
     const values = [sentLoginEmail, sentLoginPassword];
-    const query = `SELECT * FROM user WHERE correo = ? && password = ?`;
+    const query = `SELECT id_User,nombre FROM user WHERE correo = ? && password = ?`;
 
     db.query(query, values, (err, result) => {
       if (err) {
-        res.send({error:err})
+        res.send({ error: err });
       }
-      if(result.length > 0){
+      if (result.length > 0) {
         res.send(result);
-      }else{
-        res.send({message: "Credencial invalida"})
+      } else {
+        res.send({ message: "Credencial invalida" });
       }
     });
+  }
+
+  static favoritesBookUser(idUser, res) {
+    const query = `SELECT id_libro,titulo,portada,rate,author 
+                    FROM libros 
+                    WHERE id_libro 
+                    IN (SELECT id_libro FROM favoritos 
+                      WHERE id_User = ${idUser})`;
+    
+    db.query(query, (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    })
   }
 }

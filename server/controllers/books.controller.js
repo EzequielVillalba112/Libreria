@@ -34,3 +34,9 @@ export const login = async (req, res) => {
 
   return BookModel.login(sentLoginEmail, sentLoginPassword, res);
 }
+
+export const favoriteBooks = async (req, res) => {
+  const idUser = req.params.idUser;
+
+  return BookModel.favoritesBookUser(idUser, res);
+}

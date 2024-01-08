@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   allBooks,
   allGenres,
+  favoriteBooks,
   login,
   popularBooks,
   searchBook,
@@ -17,6 +18,7 @@ router.get("/popular", popularBooks);
 router.get("/allgenre", allGenres);
 router.get("/book/:id", searchBooksId);
 router.get("/book/categoria/:categori", searchBooksCategori);
+router.get("/favorite/:idUser", favoriteBooks);
 
 router.post("/login", login);
 

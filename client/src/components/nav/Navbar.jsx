@@ -36,6 +36,13 @@ export default function Navbar() {
                 Catalogo
               </Link>
             </li>
+            {
+              user != "" && ( <li className="itemMenu">
+              <Link to="/favorites" className="linkMenu">
+                Favoritos
+              </Link>
+            </li>)
+            }
           </ul>
         </div>
 

@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
   useEffect(()=>{
     let dataUser = localStorage.getItem('dataUser');
     if (dataUser) {
-      setUser(JSON.parse(dataUser));
+      setUser(dataUser);
     }
   },[]);
 

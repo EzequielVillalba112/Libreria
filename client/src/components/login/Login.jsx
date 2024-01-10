@@ -3,6 +3,7 @@ import "./login.css";
 import Axios from "axios";
 import { useAuth } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { validateLogin } from "../../validation/login/loginValidate";
 
 export default function Login() {
   const [emaiLogin, setEmailLogin] = useState("");
@@ -16,7 +17,11 @@ export default function Login() {
 
   const data = async (e) => {
     e.preventDefault();
-    if (emaiLogin !== "" && passwordLogin !== "") {
+    let resultValid = validateLogin(emaiLogin, passwordLogin);
+
+    setLoginStatus(resultValid);
+
+    if (resultValid === true) {
       const url = `http://localhost:3000/db/login/`;
 
       Axios.post(url, {
@@ -32,8 +37,6 @@ export default function Login() {
           navigate("/");
         }
       });
-    } else {
-      alert("Login failed");
     }
   };
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { StarRatio } from "../funciones/starRation";
+import "./favorite.css";
+import { Link } from "react-router-dom";
 
 export default function AllFavorites() {
   const [listFavorite, setListFavorite] = useState([]);
@@ -52,23 +54,32 @@ export default function AllFavorites() {
   }, [idUser]);
 
   return (
-    <>
-      <div>AllFavorites</div>
-      <ul>
-        {Array.isArray(listFavorite) &&
-          listFavorite.map((favorite, i) => (
-            <li key={i}>
-              <div className="cardAllBook">
-                <img src={favorite.portada} alt={favorite.titulo} />
-                <div className="dataBook">
-                  <h3>{favorite.titulo}</h3>
-                  <p>{favorite.author}</p>
-                  {<img src={StarRatio(favorite.rate)} alt="" />}
+    <section className="favoriteBook">
+      <h1>Mis libros favoritos</h1>
+
+      <div className="containerFavoriteBook">
+        <ul className="listFavoriteBook">
+          {Array.isArray(listFavorite) &&
+            listFavorite.map((favorite, i) => (
+              <li key={i}>
+                <div className="cardAllBook">
+                  <img src={favorite.portada} alt={favorite.titulo} />
+                  <div className="dataBook">
+                    <h3>{favorite.titulo}</h3>
+                    <p>{favorite.author}</p>
+                    {<img src={StarRatio(favorite.rate)} alt="" />}
+                    <Link
+                      to={`/detail/${favorite.id_libro}`}
+                      className="btn btnDetail"
+                    >
+                      Detalles
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-      </ul>
-    </>
+              </li>
+            ))}
+        </ul>
+      </div>
+    </section>
   );
 }

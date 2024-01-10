@@ -1,20 +1,43 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/UserContext";
 import "./cerrarsecion.css";
+import { IoLogInOutline } from "react-icons/io5";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
-export default function CerrarSecion({menu}) {
+const notificacion = withReactContent(Swal);
+
+export default function CerrarSecion({ menu, menuResp = false }) {
   const navigate = useNavigate();
   const { logout } = useAuth();
 
   const closed = () => {
-    navigate("/");
-    logout();
-    menu(false);
+    notificacion
+      .fire({
+        title: "¿Desea cerrar sesión?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "cerrar sesión",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          navigate("/");
+          logout();
+          menu(false);
+        }else{
+          menu(false);
+        }
+      });
   };
 
   return (
-    <div className="closed">
-      <button onClick={closed}>Cerrar sesión. </button>
+    <div className={`${menuResp == false ? 'closed': "closedRespo"}`}>
+      <button onClick={closed}>
+        <IoLogInOutline size="2rem" />
+        Cerrar sesión. 
+      </button>
     </div>
   );
 }

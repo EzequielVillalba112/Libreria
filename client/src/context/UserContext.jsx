@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
   useEffect(()=>{
     let dataUser = localStorage.getItem('dataUser');
     if (dataUser) {
-      setUser(dataUser);
+      setUser(JSON.parse(dataUser));
     }
   },[]);
 
@@ -33,6 +33,7 @@ export const UserProvider = ({ children }) => {
   const logout = () =>{
     setUser([]);
     localStorage.removeItem('dataUser');
+    localStorage.removeItem('idUser');
   }
 
   return (

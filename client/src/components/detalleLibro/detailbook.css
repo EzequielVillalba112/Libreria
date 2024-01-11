@@ -3,7 +3,6 @@
 }
 
 .datasBook{
-    width: 100%;
     height: auto;
     display: flex;
     align-items: center;
@@ -59,3 +58,26 @@
     margin: 50px auto;
 }
 
+@media only screen and (max-width: 706px){
+    .containerDataBook{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .datasBook{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .dataBookDetail{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

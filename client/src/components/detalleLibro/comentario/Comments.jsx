@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import './comentario.css'
 
 export default function Comments() {
 

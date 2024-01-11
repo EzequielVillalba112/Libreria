@@ -54,7 +54,7 @@ export class BookModel {
 
   static popularBook(res) {
     const rate = [5, 4];
-    const query = `SELECT * FROM libros WHERE rate = ${rate[0]} OR rate = ${rate[1]} LIMIT 9`;
+    const query = `SELECT * FROM libros WHERE rate = ${rate[0]} OR rate = ${rate[1]} LIMIT 6`;
 
     db.query(query, (err, result) => {
       if (err) {

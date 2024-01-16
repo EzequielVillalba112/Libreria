@@ -8,7 +8,7 @@ export default function Categoria({idPr}) {
 
   //Carga todos los generos de la bd
   const fetchGenre = async () => {
-    const url = `http://localhost:3000/db/allgenre`;
+    const url = `https://libreria-render.onrender.com/db/allgenre`;
     try {
       const res = await fetch(url);
       if (!res.ok) {

@@ -9,7 +9,7 @@ export default function DetailBook() {
   const { idBook } = useParams();
 
   const factBook = async (idBook) => {
-    const url = `http://localhost:3000/db/book/${idBook}`;
+    const url = `https://libreria-render.onrender.com/db/book/${idBook}`;
     if (idBook != "") {
       try {
         const res = await fetch(url);

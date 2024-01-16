@@ -6,7 +6,7 @@ export default function ListPopular() {
   const [listBooksPopular, setListBooksPopular] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/db/popular`)
+    fetch(`https://libreria-render.onrender.com/db/popular`)
       .then((r) => {
         return r.json();
       })

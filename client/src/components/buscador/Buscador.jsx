@@ -7,7 +7,7 @@ export default function Buscador() {
 
   const searchBooks = (name = "") => {
     if (name != "") {
-      fetch(`http://localhost:3000/db/books/${name}`)
+      fetch(`https://libreria-render.onrender.com/db/books/${name}`)
         .then((r) => {
           return r.json();
         })

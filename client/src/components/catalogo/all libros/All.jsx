@@ -13,7 +13,7 @@ export default function All({ idPr = "" }) {
   //por medio de "./categoria/Categoria.jsx"
   const categoriBook = async () => {
     if (idPr != "" && idPr != "all") {
-      const url = `http://localhost:3000/db/book/categoria/${idPr}`;
+      const url = `https://libreria-render.onrender.com/db/book/categoria/${idPr}`;
 
       try {
         const res = await fetch(url);
@@ -34,7 +34,7 @@ export default function All({ idPr = "" }) {
 
   //Lista todos los libros en la bd
   const allBooks = async () => {
-    const url = `http://localhost:3000/db/all`;
+    const url = `https://libreria-render.onrender.com/db/all`;
 
     try {
       const res = await fetch(url);
@@ -69,7 +69,7 @@ export default function All({ idPr = "" }) {
 
   //Busqueda de libros por nombre
   const searchBooks = async () => {
-    const url = `http://localhost:3000/db/books/${search}`;
+    const url = `https://libreria-render.onrender.com/db/books/${search}`;
     if (search != "") {
       try {
         const res = await fetch(url);

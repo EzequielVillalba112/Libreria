@@ -29,7 +29,7 @@ export default function AllFavorites() {
 
   const listBookFavorites = async () => {
     if (idUser !== null && idUser !== undefined) {
-      const url = `http://localhost:3000/db/favorite/${idUser.id_User}`;
+      const url = `https://libreria-render.onrender.com/db/favorite/${idUser.id_User}`;
 
       try {
         const res = await fetch(url);

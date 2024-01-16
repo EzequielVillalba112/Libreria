@@ -1,18 +1,17 @@
 import mysql from "mysql";
 
 const db = mysql.createConnection({
-  //Local
+  /*/Local
   host: "localhost",
   user: "root",
   password: "",
-  database: "biblioteca",
+  database: "biblioteca",*/
 
-  /*Clever cloud
- host: "b72ansxla5bze8snktvc-mysql.services.clever-cloud.com",
+  //Clever cloud
+  host: "b72ansxla5bze8snktvc-mysql.services.clever-cloud.com",
   user: "ucbrluvagkiy2cvy",
-  password: "",
+  password: "1syVWOm1IDzJtUrYQZux",
   database: "b72ansxla5bze8snktvc",
- */
 });
 
 export class BookModel {
@@ -115,13 +114,13 @@ export class BookModel {
                     WHERE id_libro 
                     IN (SELECT id_libro FROM favoritos 
                       WHERE id_User = ${idUser})`;
-    
+
     db.query(query, (err, result) => {
       if (err) {
         res.send(err);
       } else {
         res.send(result);
       }
-    })
+    });
   }
 }
